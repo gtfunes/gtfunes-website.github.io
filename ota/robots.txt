@@ -1,0 +1,5 @@
+# robots.txt
+# Configuration for robots, not humans!
+
+User-agent: *
+Disallow: *
