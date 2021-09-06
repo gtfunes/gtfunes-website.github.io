@@ -44,3 +44,19 @@ sftp-config-alt.json
 # Personal WakaTime project file that should never be committed
 
 .wakatime-project
+
+####
+# Gems
+
+.bundle/
+vendor/
+
+####
+# Jekyll
+
+_site
+.sass-cache
+node_modules
+.jekyll-cache
+.prettierignore
+.jekyll-metadata
