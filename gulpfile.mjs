@@ -1,12 +1,15 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-var cssnano = require('gulp-cssnano');
-var prefix = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var cp = require('child_process');
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import * as dartSass from 'sass'
+import gulpSass from 'gulp-sass'
+import cssnano from 'gulp-cssnano';
+import prefix from 'gulp-autoprefixer';
+import concat from 'gulp-concat';
+import rename from 'gulp-rename';
+import uglify from 'gulp-uglify';
+import cp from 'child_process';
+
+const sass = gulpSass(dartSass);
 
 /**
  * Compile and minify sass
@@ -120,10 +123,6 @@ function watchScripts() {
 
 function watchStyles() {
   gulp.watch([ '_sass/*.scss' ], styles);
-}
-
-function watch() {
-  gulp.parallel(watchData, watchMarkup, watchScripts, watchStyles);
 }
 
 var compile = gulp.parallel(styles, stylesVendors, scripts, scriptsVendors);
