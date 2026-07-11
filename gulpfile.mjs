@@ -2,7 +2,8 @@ import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
-import cssnano from 'gulp-cssnano';
+import cssnano from 'cssnano';
+import postcss from 'gulp-postcss';
 import prefix from 'gulp-autoprefixer';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
@@ -25,7 +26,7 @@ function styles() {
     )
     .pipe(prefix([ 'last 3 versions', '> 1%', 'ie 8' ], { cascade: true }))
     .pipe(rename('main.min.css'))
-    .pipe(cssnano())
+    .pipe(postcss([ cssnano() ]))
     .pipe(gulp.dest('_site/assets/css/'))
     .pipe(browserSync.reload({ stream: true }))
     .pipe(gulp.dest('assets/css'));
@@ -35,7 +36,7 @@ function stylesVendors() {
   return gulp
     .src([ '_sass/vendors/*.css' ])
     .pipe(concat('vendors.min.css'))
-    .pipe(cssnano())
+    .pipe(postcss([ cssnano() ]))
     .pipe(gulp.dest('_site/assets/css/'))
     .pipe(gulp.dest('assets/css'));
 }
