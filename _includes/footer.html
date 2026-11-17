@@ -1,13 +1,3 @@
-<!-- Google Analytics -->
-{% if site.google-analytics %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google-analytics.id }}"></script>
-<script>
-  var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-  if (dnt != "1" && dnt != "yes") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "{{ site.google-analytics.id }}");
-  }
-</script>
+{% if site.google-analytics.id and jekyll.environment == 'production' %}
+<script src="{{ '/assets/js/analytics.js' | relative_url }}" data-measurement-id="{{ site.google-analytics.id | escape }}" defer></script>
 {% endif %}

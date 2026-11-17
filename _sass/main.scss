@@ -31,7 +31,6 @@ html {
   font-size: $font-size-base;
   font-weight: normal;
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -135,90 +134,40 @@ a {
   box-shadow: 5px 5px 4px #161718, -5px -5px 4px #404346;
 }
 
-/* Preloader */
-
-#preloader {
-  align-items: center;
-  background: $bg-color;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  position: absolute;
-  right: 0;
-  z-index: 999;
-
-  .load {
-    height: 6rem;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 6rem;
-  }
-
-  .load hr {
-    animation: spin 2s ease infinite;
-    border: 0;
-    height: 40%;
-    margin: 0;
-    position: absolute;
-    width: 40%;
-  }
-
-  .load :first-child {
-    animation-delay: -1.5s;
-    background: $text-color;
-  }
-
-  .load :nth-child(2) {
-    animation-delay: -1s;
-    background: $primary-color;
-  }
-
-  .load :nth-child(3) {
-    animation-delay: -0.5s;
-    background: $text-color;
-  }
-
-  .load :last-child {
-    background: $primary-color;
-  }
-
-  @keyframes spin {
-    0%,
-    100% {
-      transform: translate(0);
-    }
-    25% {
-      transform: translate(160%);
-    }
-    50% {
-      transform: translate(160%, 160%);
-    }
-    75% {
-      transform: translate(0, 160%);
-    }
-  }
-}
-
 /* Landing Page */
 
 #landing {
+  align-items: center;
   background: $bg-color;
   color: $text-color;
-  display: flex;
-  height: 100%;
+  display: grid;
+  justify-items: center;
+  min-height: 100vh;
+  position: relative;
   text-align: center;
 }
 
 .landing-title {
-  left: 0;
+  max-width: 36rem;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.particles-js-canvas-el {
+  inset: 0;
   position: absolute;
-  right: 0;
-  top: 40%;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+}
+
+.analytics-note {
+  font-size: 0.875rem;
 }
 
 .landing-icons {
