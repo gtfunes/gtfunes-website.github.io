@@ -2,19 +2,18 @@
 
 # GENERAL SITE SETTINGS
 # title: This will be displayed as the website's name in your browser tab.
-title: Gaston Funes
+title: Gastón Funes
 # description: This will be meta HTML tag content. This can be ignored.
-description: Personal website
+description: "Gastón Funes is a software engineer who builds browser-based games and writes about development tools."
+url: https://gtfunes.com
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
 baseurl: ""
 
 # LANDING PAGE
 # username: This will displayed on the landing page as your name.
-username: Gaston Funes
-# typing_text: This will be typed before 'scroll down for more'.
-# > set this to your job title, e.g. Fullstack Developer
-typing_text: Software Engineer
+username: Gastón Funes
+role: Software Engineer
 # email: Your E-Mail address for the email button.
 email:
 # For every social button you want to display, set your username or userid
@@ -43,7 +42,8 @@ exclude:
     "_assets",
     "Gemfile",
     "Gemfile.lock",
-    "gulpfile.js",
+    "gulpfile.mjs",
+    "package-lock.json",
     "node_modules",
     "package.json",
   ]

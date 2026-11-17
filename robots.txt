@@ -1,8 +1,7 @@
-# robotstxt.org/
-
+---
+layout: null
+---
 User-agent: *
-Disallow: /assets
-Disallow: /images
 Disallow: /ota
 
-Sitemap: http://gtfunes.com/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

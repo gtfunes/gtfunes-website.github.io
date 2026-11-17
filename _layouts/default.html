@@ -3,11 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
+  {% assign homepage = '/' | absolute_url %}
+  <title>{{ site.title | escape }} · {{ site.role | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ homepage }}">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ site.title | escape }} · {{ site.role | escape }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  <meta property="og:url" content="{{ homepage }}">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": {{ homepage | jsonify }},
+      "mainEntity": {
+        "@type": "Person",
+        "name": {{ site.title | jsonify }},
+        "url": {{ homepage | jsonify }},
+        "jobTitle": {{ site.role | jsonify }},
+        "sameAs": [
+          {{ site.github_username | prepend: "https://github.com/" | jsonify }},
+          {{ site.linkedin_username | prepend: "https://www.linkedin.com/in/" | jsonify }}
+        ]
+      }
+    }
+  </script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | prepend: site.baseurl }}">
@@ -17,19 +41,11 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/assets/css/vendors.min.css" | prepend: site.baseurl }}">
 
-  <script src="{{ "/assets/js/vendors.min.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/assets/js/vendors.min.js" | prepend: site.baseurl }}" defer></script>
+  <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}" defer></script>
 </head>
 
 <body>
-  <div id="preloader">
-    <div class="load">
-      <hr />
-      <hr />
-      <hr />
-      <hr />
-    </div>
-  </div>
   {% include landing-page.html %}
   {% include footer.html %}
 </body>
