@@ -31,10 +31,12 @@ html {
   font-size: $font-size-base;
   font-weight: normal;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 /* Typography */
@@ -141,8 +143,10 @@ a {
   background: $bg-color;
   color: $text-color;
   display: grid;
+  height: 100vh;
+  height: 100dvh;
   justify-items: center;
-  min-height: 100vh;
+  overflow: hidden;
   position: relative;
   text-align: center;
 }
