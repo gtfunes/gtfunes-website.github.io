@@ -1,13 +1,11 @@
 <main id="landing">
   <div class="landing-title">
-    <h1 class="highlight-title">{{ site.username | escape }}</h1>
-    <p>{{ site.role | escape }}</p>
-    <p>I build browser-based games and write about development tools on <a href="{{ site.blog_url }}">Cosmic Rays</a>.</p>
-    <nav class="projects" aria-label="Projects">
-      <a href="https://bingo.gtfunes.com/">Bingo ball caller</a>
-      <a href="https://generala.gtfunes.com/">Generala score sheet</a>
-      <a href="https://truco.gtfunes.com/">Truco scorekeeper</a>
-    </nav>
+    <h1>Hi, I&#39;m
+      <span class="highlight-title">{{ site.username | escape }}</span>,
+    </h1>
+    <h1>
+      <span id="txt-rotate" data-period="2000">{{ site.role | escape }}</span>
+    </h1>
     <div class="landing-icons">
       {% if site.email != null %}
         <a class="social-link email" aria-label="My E-Mail" href="mailto:{{site.email}}">
@@ -112,9 +110,5 @@
       </a>
     {% endif %}
     </div>
-    <details class="analytics-note">
-      <summary>Site analytics</summary>
-      <p>This site uses Google Analytics to measure page views. It skips analytics when your browser sends Do Not Track or Global Privacy Control.</p>
-    </details>
   </div>
 </main>

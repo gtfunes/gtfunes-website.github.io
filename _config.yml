@@ -2,9 +2,9 @@
 
 # GENERAL SITE SETTINGS
 # title: This will be displayed as the website's name in your browser tab.
-title: Gastón Funes
+title: Gaston Funes
 # description: This will be meta HTML tag content. This can be ignored.
-description: "Gastón Funes is a software engineer who builds browser-based games and writes about development tools."
+description: Personal website
 url: https://gtfunes.com
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
@@ -12,7 +12,7 @@ baseurl: ""
 
 # LANDING PAGE
 # username: This will displayed on the landing page as your name.
-username: Gastón Funes
+username: Gaston Funes
 role: Software Engineer
 # email: Your E-Mail address for the email button.
 email:

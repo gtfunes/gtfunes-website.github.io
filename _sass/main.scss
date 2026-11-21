@@ -154,20 +154,13 @@ a {
   z-index: 1;
 }
 
+#txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
 .particles-js-canvas-el {
   inset: 0;
   position: absolute;
-}
-
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  justify-content: center;
-}
-
-.analytics-note {
-  font-size: 0.875rem;
 }
 
 .landing-icons {
