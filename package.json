@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
+    "build": "gulp build",
     "prod": "gulp default"
   },
   "dependencies": {
