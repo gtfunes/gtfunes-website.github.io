@@ -135,3 +135,9 @@ var watch = gulp.parallel(watchData, watchMarkup, watchScripts, watchStyles);
  * compile the Jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', gulp.parallel(serve, watch));
+
+/**
+ * Build task, running `gulp build` will compile the sass and js once
+ * and exit. CI runs it before the Jekyll build.
+ */
+gulp.task('build', compile);
